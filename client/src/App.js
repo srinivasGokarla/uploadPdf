@@ -1,70 +1,4 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// // import { Document, Page } from 'react-pdf';
-// // import { Document,Page } from 'react-pdf/dist/esm/pdf.worker.entry';
 
-// // pdfjs.GlobalWorkerOptions.workerSrc = //cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js;
-
-// function App() {
-//   const [file, setFile] = useState(null);
-//   const [pdfs, setPdfs] = useState([]);
-
-//   // useEffect(() => {
-//   //   fetchPDFs();
-//   // }, []);
-
-//   // const fetchPDFs = async () => {
-//   //   try {
-//   //     const response = await axios.get('http://localhost:5000/pdfs');
-//   //     setPdfs(response.data);
-//   //   } catch (error) {
-//   //     console.error('Error fetching PDFs:', error);
-//   //   }
-//   // };
-
-//   const handleFileUpload = (e) => {
-//     setFile(e.target.files[0]);
-//   };
-
-//   const handleUpload = async () => {
-//     const formData = new FormData();
-//     formData.append('pdf', file);
-//     try {
-//       const res = await axios.post('http://localhost:5000/upload', formData, {
-//         headers: {
-//           'Content-Type': 'multipart/form-data'
-//         }
-//       });
-//       console.log(res.data);
-//       // fetchPDFs();
-//     } catch (error) {
-//       console.error('Error uploading PDF:', error);
-//     }
-//   };
-
-//   return (
-//     <div className="App">
-//       <input type="file" onChange={handleFileUpload} />
-//       <button onClick={handleUpload}>Upload</button>
-//       {/* <div>
-//         <h2>Uploaded PDFs:</h2>
-//         {pdfs.map((pdf, index) => (
-//           <div key={index}>
-//             <p>{pdf.name}</p>
-//             <Document
-//               file={${pdf.pdfPath}}
-//               onLoadError={(error) => console.error('Error loading PDF:', error)}
-//             >
-//               <Page pageNumber={1} />
-//             </Document>
-//           </div>
-//         ))}
-//       </div> */}
-//     </div>
-//   );
-// }
-
-// export default App;
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -141,7 +75,7 @@ function App() {
   };
 
   const handleDownloadNewPDF = () => {
-    window.open(downloadLink, '_blank'); // Opens the download link in a new tab
+    window.open(downloadLink, '_blank');
   };
 
   return (
